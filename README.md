@@ -14,6 +14,10 @@ This fork does not have installation scripts and uses only python3 (python2 is o
 2. BeautifulSoup
 3. Ffmpeg
 
+## Installation
+Clone the repo or download the script.
+If you want to, put it in a directory in your path.
+
 ## Usage
 
 ```shell
@@ -25,5 +29,4 @@ Found: We're not gonna take it - Twisted Sister
 Download song (y/n)? y
 Downloading ...
 ```
-
 
