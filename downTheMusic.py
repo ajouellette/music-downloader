@@ -27,6 +27,13 @@ for link in soup.find_all('a'):
     	video_link = link.get("href")
     	break
 
+# Print title and prompt to download
+title = title = soup.find("a", "yt-uix-tile-link").text
+print("Found: " + title)
+prompt = raw_input("Download song (y/n)? ")
+if prompt != "y":
+    sys.exit()
+
 # Links are relative on page, making them absolute.
 video_link = "http://www.youtube.com/" + video_link
 command = "youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 " + video_link
