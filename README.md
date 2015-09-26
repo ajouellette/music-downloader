@@ -5,7 +5,8 @@ Download music from YouTube.
 This is a fork of [Instant-Music-Downloader](https://github.com/yask123/Instant-Music-Downloader).
 
 I decided to create my own fork, to focus on keeping the script simple.
-This fork does not have installation scripts and uses only python3. If your running something other than Linux, I cannot guarantee that it will work.
+This fork does not have installation scripts and uses only python3 (python2 is outdated and should never be used). If you're running something other than Linux, I cannot guarantee that it will work (don't even talk to me about Windows).
+
 **Keep it Simple Stupid!**
 
 ## Requirements
