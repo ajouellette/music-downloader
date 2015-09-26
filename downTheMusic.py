@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+#
+# downTheMusic.py
+#
 
 import os
 import sys
@@ -11,26 +14,24 @@ search = input("Enter songname / lyrics / artist ... or whatever\n> ")
 if search == "":
     sys.exit()
 
-search = qp(search)
-
 print("Searching ...")
 
 # Magic happens here.
-response = urlopen('https://www.youtube.com/results?search_query=' + search)
+search = qp(search)
+response = urlopen("https://www.youtube.com/results?search_query=" + search)
 html = response.read()
-soup = BeautifulSoup(html, 'html.parser')
+soup = BeautifulSoup(html, "html.parser")
 for link in soup.find_all('a'):
-    if '/watch?v=' in link.get('href'):
-    	print(link.get('href'))
-    	# May change when Youtube gets updated in the future.
-    	video_link = link.get('href')
+    if "/watch?v=" in link.get("href"):
+    	# May change when YouTube gets updated in the future.
+    	video_link = link.get("href")
     	break
 
 # Links are relative on page, making them absolute.
-video_link = 'http://www.youtube.com/' + video_link
-command = 'youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 ' + video_link
+video_link = "http://www.youtube.com/" + video_link
+command = "youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 " + video_link
 
-# Youtube-dl is a proof that god exists.
-print ('Downloading...')
+# Download the song.
+print ("Downloading...")
 os.system(command)
 print("Done!")
