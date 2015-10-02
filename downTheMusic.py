@@ -5,7 +5,6 @@
 
 import os
 import sys
-import glob
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from urllib.parse import quote_plus as qp
@@ -23,9 +22,9 @@ html = response.read()
 soup = BeautifulSoup(html, "html.parser")
 for link in soup.find_all('a'):
     if "/watch?v=" in link.get("href"):
-    	# May change when YouTube gets updated in the future.
-    	video_link = link.get("href")
-    	break
+        # May change when YouTube gets updated in the future.
+        video_link = link.get("href")
+        break
 
 # Print title and prompt to download
 title = title = soup.find("a", "yt-uix-tile-link").text
